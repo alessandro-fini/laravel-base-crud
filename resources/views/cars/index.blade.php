@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'Cars')
 
 @section('content')
     <div class="container">
@@ -20,7 +20,7 @@
                         <th scope="row">{{ $car->id }}</th>
                         <td>{{ $car->car_maker }}</td>
                         <td>{{ $car->model }}</td>
-                        <td><a href="">view</a></td>
+                        <td><a href="{{ route('cars.show', [$car->id]) }}">view</a></td>
                     </tr>
                 @endforeach
             </tbody>
