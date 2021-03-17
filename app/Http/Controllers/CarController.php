@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Car;
+
 class CarController extends Controller
 {
     /**
@@ -13,7 +15,11 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
+        $items = Car::all();
+        
+        $data = ['cars' => $items];
+
+        return view('cars.index', $data);
     }
 
     /**
@@ -45,7 +51,7 @@ class CarController extends Controller
      */
     public function show($id)
     {
-        //
+        return 'show1';
     }
 
     /**

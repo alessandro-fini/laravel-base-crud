@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link {{ (Request::route() -> getName() == 'home_page') ? 'active' : '' }}" href="{{ route('home_page') }}">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link {{ (Request::route() -> getName() == 'cars.index') ? 'active' : '' }}" href="{{ route('cars.index') }}">Cars</a>
                 {{-- <a class="nav-link" href="#">Pricing</a>
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> --}}
             </div>
