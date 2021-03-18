@@ -44,14 +44,17 @@ class CarController extends Controller
 
         $inputCar = new Car;
 
-        $inputCar->car_maker = $data['car_maker'];
+        /* $inputCar->car_maker = $data['car_maker'];
         $inputCar->model = $data['model'];
         $inputCar->year = $data['year'];
         $inputCar->price = $data['price'];
-        $inputCar->description = $data['description'];
+        $inputCar->description = $data['description']; */
+
+        $inputCar->fill($data);
 
         $inputCar->save();
 
+        /* return redirect()->route('cars.show', $inputCar->id); */
         return redirect()->route('cars.index');
     }
 
