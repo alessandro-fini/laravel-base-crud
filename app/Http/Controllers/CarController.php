@@ -29,7 +29,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        //
+        return view('cars.create');
     }
 
     /**
@@ -40,7 +40,19 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $inputCar = new Car;
+
+        $inputCar->car_maker = $data['car_maker'];
+        $inputCar->model = $data['model'];
+        $inputCar->year = $data['year'];
+        $inputCar->price = $data['price'];
+        $inputCar->description = $data['description'];
+
+        $inputCar->save();
+
+        return redirect()->route('cars.index');
     }
 
     /**
@@ -53,9 +65,13 @@ class CarController extends Controller
     {
         $item = Car::find($id);
 
-        $data = ['car' => $item];
+        if ($item) {
+            $data = ['car' => $item];
 
-        return view('cars.show', $data);
+            return view('cars.show', $data);
+        }
+
+        abort('404');
     }
 
     /**

@@ -4,7 +4,8 @@
 
 @section('content')
     <div class="container">
-        <h1>Marketplace</h1>
+        <h1 class="mt-2">Marketplace</h1>
+        <button type="button" class="btn btn-primary btn-lg btn-block mt-4 mb-4"><a href="{{ route('cars.create') }}" class="text-white">Add vehicle</a></button>
         <table class="table table-dark">
             <thead>
                 <tr>
