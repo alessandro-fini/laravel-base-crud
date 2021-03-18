@@ -50,7 +50,9 @@ class CarController extends Controller
         $inputCar->price = $data['price'];
         $inputCar->description = $data['description']; */
 
+        /* ---- metodo alternativo, creare prima una variabile 'fillable' nel model di riferimento in cui inserire le colonne della tabella da riempire. ---- */
         $inputCar->fill($data);
+        /* ---- / ---- */
 
         $inputCar->save();
 
