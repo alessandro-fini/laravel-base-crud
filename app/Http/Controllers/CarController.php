@@ -46,6 +46,7 @@ class CarController extends Controller
             'car_maker' => 'required|max:100',
             'model' => 'required|max:80',
             'year' => 'required',
+            'fuel' => 'required',
             'price' => 'required|max:6',
             'description' => 'required|max:1500'
         ]);
@@ -130,6 +131,7 @@ class CarController extends Controller
             'car_maker' => 'required|max:100',
             'model' => 'required|max:80',
             'year' => 'required',
+            'fuel' => 'required',
             'price' => 'required|max:6',
             'description' => 'required|max:1500'
         ]);

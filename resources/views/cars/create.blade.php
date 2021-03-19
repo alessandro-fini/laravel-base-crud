@@ -29,6 +29,14 @@
                 <input type="text" class="form-control" id="input_year" name="year">
             </div>
             <div class="form-group">
+                <label for="input_fuel">Fuel</label>
+                <select name="fuel" id="input_fuel" class="form-control">
+                    <option value="" selected>---</option>
+                    <option value="gasoline">gasoline</option>
+                    <option value="diesel">diesel</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="input_price">Price</label>
                 <input type="text" class="form-control" id="input_price" name="price">
             </div>
