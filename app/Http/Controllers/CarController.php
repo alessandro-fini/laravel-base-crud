@@ -126,6 +126,14 @@ class CarController extends Controller
     {
         $data = $request->all();
 
+        $request->validate([
+            'car_maker' => 'required|max:100',
+            'model' => 'required|max:80',
+            'year' => 'required',
+            'price' => 'required|max:6',
+            'description' => 'required|max:1500'
+        ]);
+
         $car->update($data);
 
         return redirect()->route('cars.index')->with('status', 'Record updated');
