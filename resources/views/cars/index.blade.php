@@ -17,6 +17,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Car Maker</th>
                     <th scope="col">Model</th>
+                    <th scope="col">Fuel</th>
                     <th scope="col">Info</th>
                 </tr>
             </thead>
@@ -26,6 +27,7 @@
                         <th scope="row">{{ $car->id }}</th>
                         <td>{{ $car->car_maker }}</td>
                         <td>{{ $car->model }}</td>
+                        <td>{{ $car->fuel }}</td>
                         <td>
                             <a href="{{ route('cars.show', $car->id) }}" class="btn btn-outline-info">view</a>
                             <a href="{{ route('cars.edit', $car->id) }}" class="btn btn-outline-warning ml-1">edit</a>
