@@ -42,6 +42,14 @@ class CarController extends Controller
     {
         $data = $request->all();
 
+        $request->validate([
+            'car_maker' => 'required|max:100',
+            'model' => 'required|max:80',
+            'year' => 'required',
+            'price' => 'required|max:6',
+            'description' => 'required|max:1500'
+        ]);
+
         $inputCar = new Car;
 
         /* $inputCar->car_maker = $data['car_maker'];
