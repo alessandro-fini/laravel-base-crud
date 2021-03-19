@@ -24,7 +24,11 @@
                         <td>
                             <a href="{{ route('cars.show', $car->id) }}" class="btn btn-outline-info">view</a>
                             <a href="{{ route('cars.edit', $car->id) }}" class="btn btn-outline-warning ml-1">edit</a>
-                            <a href="" class="btn btn-outline-danger ml-1">delete</a>
+                            <form action="{{ route('cars.destroy', $car->id) }}" class="d-inline-block" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-outline-danger ml-1">delete</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
