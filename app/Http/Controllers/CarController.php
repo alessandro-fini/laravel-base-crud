@@ -57,7 +57,7 @@ class CarController extends Controller
         $inputCar->save();
 
         /* return redirect()->route('cars.show', $inputCar->id); */
-        return redirect()->route('cars.index');
+        return redirect()->route('cars.index')->with('status', 'Record added');
     }
 
     /**
@@ -120,7 +120,7 @@ class CarController extends Controller
 
         $car->update($data);
 
-        return redirect()->route('cars.index');
+        return redirect()->route('cars.index')->with('status', 'Record updated');
     }
 
     /**
@@ -133,6 +133,6 @@ class CarController extends Controller
     {
         $car->delete();
 
-        return redirect()->route('cars.index');
+        return redirect()->route('cars.index')->with('status', 'Record deleted');
     }
 }

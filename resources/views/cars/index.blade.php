@@ -3,6 +3,11 @@
 @section('title', 'Cars')
 
 @section('content')
+    @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+    @endif
     <div class="container">
         <h1 class="mt-2">Marketplace</h1>
         <button type="button" class="btn btn-primary btn-lg btn-block mt-4 mb-4"><a href="{{ route('cars.create') }}" class="text-white">Add vehicle</a></button>
