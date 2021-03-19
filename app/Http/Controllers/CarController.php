@@ -66,12 +66,23 @@ class CarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    /* public function show($id)
     {
         $item = Car::find($id);
 
         if ($item) {
             $data = ['car' => $item];
+
+            return view('cars.show', $data);
+        }
+
+        abort('404');
+    } */
+
+    public function show(Car $car)
+    {
+        if ($car) {
+            $data = ['car' => $car];
 
             return view('cars.show', $data);
         }
@@ -85,9 +96,15 @@ class CarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Car $car)
     {
-        //
+        if ($car) {
+            $data = ['car' => $car];
+
+            return view('cars.edit', $data);
+        }
+
+        abort('404');
     }
 
     /**
@@ -97,9 +114,13 @@ class CarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Car $car)
     {
-        //
+        $data = $request->all();
+
+        $car->update($data);
+
+        return redirect()->route('cars.index');
     }
 
     /**
